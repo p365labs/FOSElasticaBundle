@@ -109,6 +109,7 @@ class ObjectPersister implements ObjectPersisterInterface
         foreach ($objects as $object) {
             $documents[] = $this->transformToElasticaDocument($object);
         }
+
         try {
             $this->type->addDocuments($documents);
         } catch (BulkException $e) {
